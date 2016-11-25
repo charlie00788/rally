@@ -25,7 +25,6 @@ $factory->define(App\Entities\User::class, function (Faker\Generator $faker) {
 $factory->define(\App\Entities\Question::class, function (Faker\Generator $faker) {
     return [
         'number'  => $faker->numberBetween($min = 1, $max = 10),
-        'place' => $faker->address,
         'question' => 'Como te llamas?'
     ];
 });
@@ -40,5 +39,11 @@ $factory->define(\App\Entities\Data::class, function (Faker\Generator $faker) {
     return [
         'nquestion' => 1,
         'points'    => 0
+    ];
+});
+
+$factory->define(\App\Entities\Place::class, function (Faker\Generator $faker) {
+    return [
+        'place' => $faker->address
     ];
 });

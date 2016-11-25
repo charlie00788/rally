@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Entities\Data;
+use App\Entities\Place;
 use App\Entities\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -18,7 +20,13 @@ class ApiController extends Controller
                     'error' => 'Contraseña incorrecta'
                 ];
             } else {
-                $respuesta = ['success' => 'Exitoso'];
+                $user_id = $usuario->id;
+                $datos = Data::where('user_id', $user_id)->first();
+                $lugar = Place::find($datos->nquestion);
+                $respuesta = [
+                    'success' => 'Exitoso',
+                    'lugar'   => $lugar->place
+                ];
             }
         } else {
             $respuesta = [
