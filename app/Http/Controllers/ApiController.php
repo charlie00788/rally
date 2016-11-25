@@ -46,7 +46,7 @@ class ApiController extends Controller
         $preguntas = Question::where('number', $numero)
             ->get();
         $num = $preguntas->count() - 1;
-        $aleatorio = rand(1, $num);
+        $aleatorio = rand(0, $num);
         $respuestas = Answer::where('question_id', $numero)
             ->select('answer', 'ans')
             ->get();
