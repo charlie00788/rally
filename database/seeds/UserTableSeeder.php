@@ -28,9 +28,9 @@ class UserTableSeeder extends Seeder
     public function createUser()
     {
         factory(\App\Entities\User::class)->create([
-            'nickname'  => 'team1',
-            'email'     => 'team1@hotmail.com',
-            'password'  => bcrypt('escuelamilitar'),
+            'nickname'  => 'a',
+            'email'     => 'a@hotmai.com',
+            'password'  => bcrypt('a'),
             'remember_token' => str_random(10)
         ]);
 
