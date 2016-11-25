@@ -1,5 +1,5 @@
 <li>
-    <a href="#">
+    <a href="{{ route('web.getTeams') }}">
         <i class="fa fa-users"></i> <span class="nav-label">Equipos</span>
     </a>
 </li>

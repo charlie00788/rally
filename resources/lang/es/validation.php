@@ -102,7 +102,7 @@ return [
         'nickname'  => 'Usuario',
         'password'  => 'Contraseña',
         'password_confirmation' => 'Confirmar contraseña',
-        'name'      => 'Nombres',
+        'name'      => 'Nombres y Apellidos',
         'flastname' => 'Apellido paterno',
         'slastname' => 'Apellido materno',
         'position'  => 'Cargo',
@@ -123,7 +123,11 @@ return [
         'reason'    => 'Motivo',
         'hours'     => 'Horas',
         'minutes'   => 'Minutos',
-        'licenses'  => 'Permisos'
+        'licenses'  => 'Permisos',
+
+        'semester'  => 'Semestre',
+        'subject'   => 'Materia',
+        'code'      => 'Código'
 
     ],
 ];

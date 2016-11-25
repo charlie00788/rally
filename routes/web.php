@@ -50,7 +50,41 @@ Route::group(['middleware' => 'auth'], function (){
 
     Route::get('equipos', [
         'uses'  => 'HomeController@getTeams',
-        'as'    => 'getTeams'
+        'as'    => 'web.getTeams'
     ]);
 
+    Route::get('agregar-equipo', [
+        'uses'  => 'HomeController@getAddTeams',
+        'as'    => 'web.getAddTeams'
+    ]);
+
+    Route::post('agregar-equipo', [
+        'uses'  => 'HomeController@postAddTeams',
+        'as'    => 'web.postAddTeams'
+    ]);
+
+    Route::get('eliminar-equipo/{team_id}',[
+        'uses'  => 'HomeController@getDeleteTeam',
+        'as'    => 'web.getDeleteTeam'
+    ]);
+
+    Route::get('personas/{team_id}', [
+        'uses'  => 'HomeController@getPeople',
+        'as'    => 'web.getPeople'
+    ]);
+
+    Route::get('agregar-personas/{team_id}', [
+        'uses'  => 'HomeController@getAddPeople',
+        'as'    => 'web.getAddPeople'
+    ]);
+
+    Route::post('agregar-personas', [
+        'uses'  => 'HomeController@postAddPeople',
+        'as'    => 'web.postAddPeople'
+    ]);
+
+    Route::get('eliminar-persona/{persona_id}', [
+        'uses'  => 'HomeController@getDeletePeople',
+        'as'    => 'web.getDeletePeople'
+    ]);
 });

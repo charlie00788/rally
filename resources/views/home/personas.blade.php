@@ -4,10 +4,10 @@
 
     <div class="row wrapper border-bottom white-bg page-heading">
         <div class="col-sm-12">
-            <h2>Equipos</h2>
+            <h2>Personas de los equipos</h2>
             <ol class="breadcrumb">
                 <li>
-                    Equipos en el sistema: {{ $teams->count() }}
+                    Personas en el equipo: {{ $personas->count() }}
                 </li>
             </ol>
         </div>
@@ -24,8 +24,8 @@
         <div class="row">
             <div class="col-lg-12 animated fadeInRight">
                 <div class="ibox-content">
-                    <a class="btn btn-primary" href="{{ route('web.getAddTeams') }}">
-                        Agregar Equipo
+                    <a class="btn btn-primary" href="{{ route('web.getAddPeople', $team_id) }}">
+                        Agregar Personas
                     </a>
                 </div>
             </div>
@@ -38,16 +38,21 @@
                     <table class="table table-hover" width="100%">
                         <thead>
                         <tr>
-                            <th>Nombre Equipo</th>
-                            <th style="text-align: center" colspan="2">Opciones</th>
+                            <th>Nombre y Apellidos</th>
+                            <th>Semestre</th>
+                            <th>Código</th>
+                            <th>Materia</th>
+                            <th style="text-align: center">Opciones</th>
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($teams as $team)
+                        @foreach($personas as $persona)
                             <tr>
-                                <td>{{ $team->nickname }}</td>
-                                <td style="text-align: center"><a href="{{ route('web.getPeople', $team->id) }}" class="btn btn-xs btn-success">Ver</a></td>
-                                <td style="text-align: center"><a href="{{ route('web.getDeleteTeam', $team->id) }}" class="btn btn-xs btn-danger">Eliminar</a></td>
+                                <td>{{ $persona->name }}</td>
+                                <td>{{ $persona->semester }}</td>
+                                <td>{{ $persona->code }}</td>
+                                <td>{{ $persona->subject }}</td>
+                                <td style="text-align: center"><a href="{{ route('web.getDeletePeople', $persona->id) }}" class="btn btn-xs btn-danger">Eliminar</a></td>
                             <tr>
                         @endforeach
                         </tbody>
