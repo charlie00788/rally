@@ -12,7 +12,7 @@ class UserTableSeeder extends Seeder
     public function run()
     {
         $this->createAdmin();
-        $this->createUser();
+//        $this->createUser();
     }
 
     public function createAdmin()
