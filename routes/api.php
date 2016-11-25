@@ -22,3 +22,8 @@ Route::get('user/{user}/pass/{pass}', [
     'uses'  => 'ApiController@getLogin',
     'as'    => 'api.getlogin'
 ]);
+
+Route::get('p/{numero}', [
+    'uses'  => 'ApiController@getQuestion',
+    'as'    => 'api.getQuestion'
+]);

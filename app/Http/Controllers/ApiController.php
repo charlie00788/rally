@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Entities\Answer;
 use App\Entities\Data;
 use App\Entities\Place;
+use App\Entities\Question;
 use App\Entities\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -34,6 +36,24 @@ class ApiController extends Controller
             ];
         }
 
+        $res[] = $respuesta;
+        $resultado = ['respuesta' => $res];
+        return $resultado;
+    }
+
+    public function getQuestion($numero)
+    {
+        $preguntas = Question::where('number', $numero)
+            ->get();
+        $num = $preguntas->count();
+        $aleatorio = rand(1, $num);
+        $respuestas = Answer::where('question_id', $numero)
+            ->select('answer', 'ans')
+            ->get();
+        $respuesta = [
+            'pregunta'  => $preguntas[$aleatorio]->question,
+            'respuestas' => $respuestas
+        ];
         $res[] = $respuesta;
         $resultado = ['respuesta' => $res];
         return $resultado;
