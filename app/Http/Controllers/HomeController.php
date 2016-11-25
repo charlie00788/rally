@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Entities\Team;
+use App\Entities\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -28,6 +30,8 @@ class HomeController extends Controller
 
     public function getTeams()
     {
+        $teams = User::all();
 
+        return view('home.teams', compact('teams'));
     }
 }
