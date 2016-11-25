@@ -52,10 +52,14 @@ class ApiController extends Controller
             ->get();
         $respuesta = [
             'pregunta'  => $preguntas[$aleatorio]->question,
-            'respuestas' => $respuestas
         ];
-        $res[] = $respuesta;
-        $resultado = ['respuesta' => $res];
+
+        foreach ($respuestas as $res){
+            $respuesta[$res->answer] = $res->ans;
+        }
+
+        $devolver[] = $respuesta;
+        $resultado = ['respuesta' => $devolver];
         return $resultado;
     }
 }
