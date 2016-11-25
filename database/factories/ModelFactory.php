@@ -35,3 +35,10 @@ $factory->define(\App\Entities\Answer::class, function (Faker\Generator $faker) 
         'answer' => 'Si soy yo'
     ];
 });
+
+$factory->define(\App\Entities\Data::class, function (Faker\Generator $faker) {
+    return [
+        'nquestion' => 1,
+        'points'    => 0
+    ];
+});

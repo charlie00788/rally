@@ -75,5 +75,67 @@ class QuestionTableSeeder extends Seeder
             'answer'    => 'Reportes de cronograma de trabajo',
             'ans'       => false
         ]);
+
+        //////////
+
+        factory(\App\Entities\Question::class)->create([
+            'number'  => '1',
+            'question'  => 'Divisiones de la Ingeniería de Software.'
+        ]);
+
+        factory(\App\Entities\Answer::class)->create([
+            'question_id'   => 3,
+            'answer'    => 'Análisis, Diseño e Implementación',
+            'ans'       => true
+        ]);
+
+        factory(\App\Entities\Answer::class)->create([
+            'question_id'   => 3,
+            'answer'    => 'Diseño y Codificación de Software',
+            'ans'       => false
+        ]);
+
+        factory(\App\Entities\Answer::class)->create([
+            'question_id'   => 3,
+            'answer'    => 'Análisis e Implementación',
+            'ans'       => false
+        ]);
+
+        factory(\App\Entities\Answer::class)->create([
+            'question_id'   => 3,
+            'answer'    => 'Planificación, Diseño e Implementación',
+            'ans'       => false
+        ]);
+
+        //////////
+
+        factory(\App\Entities\Question::class)->create([
+            'number'  => '1',
+            'question'  => 'La Ingeniería de Software...'
+        ]);
+
+        factory(\App\Entities\Answer::class)->create([
+            'question_id'   => 4,
+            'answer'    => 'Es una disciplina con una larga duración',
+            'ans'       => false
+        ]);
+
+        factory(\App\Entities\Answer::class)->create([
+            'question_id'   => 4,
+            'answer'    => 'Está relacionada con la Programación de Computadoras, las Ciencias de la Computación, la Administración General y la Ingeniería de Sistemas',
+            'ans'       => true
+        ]);
+
+        factory(\App\Entities\Answer::class)->create([
+            'question_id'   => 4,
+            'answer'    => 'Es toda construcción de software involucra realizar tareas de Ingeniería de Software',
+            'ans'       => false
+        ]);
+
+        factory(\App\Entities\Answer::class)->create([
+            'question_id'   => 4,
+            'answer'    => 'Aplica especialmente a la construcción de software que es llevada a cabo por una persona para ser utilizado por ella misma',
+            'ans'       => false
+        ]);
     }
 }
